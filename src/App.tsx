@@ -1,24 +1,20 @@
-// src/App.tsx
-import React, { useState } from 'react';
-import './App.css';
-import Popup from './components/pop-up';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import HomePage from './components/Home/HomePage';
+import MarvelPage from './components/Marvel/MarvelPage';
+import DCPage from './components/DC/DCPage';
+import AnimePage from './components/Anime/AnimePage';
 
 function App() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
-
   return (
-    <div className="App">
-      <button onClick={openPopup}>Open Popup</button>
-      <Popup isOpen={isPopupOpen} onClose={closePopup} />
-    </div>
+    <Router>
+      <Route>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/marvel" element={<MarvelPage/>} />
+        <Route path="/dc" element={<DCPage/>} />
+        <Route path="/anime" element={<AnimePage/>} />
+        </Route>
+    </Router>
   );
 }
 

@@ -17,8 +17,7 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose }) => {
       contentLabel="Popup"
       className="popup-modal"
       overlayClassName="popup-overlay"
-
-    >
+     >
       <div className="popup-content">
 
         <h2><center>Your Popup Content</center></h2>
